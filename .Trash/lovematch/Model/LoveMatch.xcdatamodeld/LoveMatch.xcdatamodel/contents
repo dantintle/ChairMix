@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C3012" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="gender" attributeType="String" syncable="YES"/>
+        <attribute name="isFamilyMember" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="pictureURL" attributeType="String" syncable="YES"/>
+        <attribute name="rating" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="relationshipStatus" attributeType="String" syncable="YES"/>
+        <attribute name="uid" attributeType="String" syncable="YES"/>
+        <relationship name="user" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User">
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="gender" attributeType="String" syncable="YES"/>
+        <attribute name="interestedIn" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="numberDirectMessages" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberFamilyMembers" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberLikesOnStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfCommentsOnStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfTagedFriends" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="numberOfTagedOnFriendsPictures" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="pictureIcon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="pictureURL" attributeType="String" syncable="YES"/>
+        <attribute name="uid" attributeType="String" syncable="YES"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Friend" inverseName="user" inverseEntity="Friend" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <elements>
+        <element name="Friend" positionX="504" positionY="194" width="128" height="178"/>
+        <element name="User" positionX="315" positionY="155" width="128" height="255"/>
+    </elements>
+</model>
